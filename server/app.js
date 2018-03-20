@@ -2,7 +2,7 @@ var express = require('express'),
   compress = require('compression'),
   forceSsl = require('force-ssl-heroku'),
   app = express(),
-  PORT = process.env.PORT || 3000;
+  PORT = process.env.PORT || 4000;
 
 app.disable('x-powered-by');
 app.use(forceSsl);
