@@ -1,0 +1,28 @@
+{
+  "name": "simple-stack",
+  "version": "0.1.0",
+  "description": "",
+  "main": "server/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpodwys/simple-stack.git"
+  },
+  "author": "jpodwys",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jpodwys/simple-stack/issues"
+  },
+  "homepage": "https://github.com/jpodwys/simple-stack#readme",
+  "dependencies": {
+    "compression": "^1.7.2",
+    "del": "^3.0.0",
+    "express": "^4.16.3",
+    "force-ssl-heroku": "^1.0.2",
+    "gulp": "^3.9.1",
+    "gulp-inline-source": "^3.1.0"
+  }
+}
