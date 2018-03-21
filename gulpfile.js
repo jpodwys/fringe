@@ -20,10 +20,25 @@ function inline() {
     .pipe(gulp.dest('./dist'));
 }
 
+function sw() {
+  return gulp.src('./client/js/sw.js')
+    .pipe(gulp.dest('./dist'));
+}
+
+function styles() {
+  return gulp.src('./client/css/styles.css')
+    .pipe(gulp.dest('./dist'));
+}
+
+function components() {
+  return gulp.src('./client/components/*.js')
+    .pipe(gulp.dest('./dist/components'));
+}
+
 function build() {
   return gulp.series(
     clean,
-    gulp.parallel(serve, inline)
+    gulp.parallel(serve, inline, sw, styles, components)
   )();
 }
 
