@@ -8,7 +8,6 @@ app.disable('x-powered-by');
 app.use(forceSsl);
 app.use(compress({threshold: '1.4kb'}));
 app.use(express.static('dist', {maxAge: '30d'}));
-// require('./middleware/app-middleware')(app);
 require('./routes')(app);
 
 var server = app.listen(PORT);

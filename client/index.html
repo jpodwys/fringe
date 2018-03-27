@@ -8,22 +8,21 @@
     <header><h1>Simple Stack</h1></header>
     <div id="wrapper" class="spinner"></div>
     <script src="/js/script.js" inline></script>
-    <!-- <script src="/js/asset-loader.js" inline></script> -->
     <script>
-      // if('serviceWorker' in navigator){
-      //   navigator.serviceWorker.register('/sw.js');
+      if('serviceWorker' in navigator){
+        navigator.serviceWorker.register('/sw.js');
         
-      //   // navigator.serviceWorker.onmessage = function (e) {
-      //   //   let eTag = e.data;
-      //   //   let lastETag = localStorage.getItem('currentETag');
-      //   //   let isNew = !!lastETag && !!eTag && lastETag !== eTag;
+        // navigator.serviceWorker.onmessage = function (e) {
+        //   let eTag = e.data;
+        //   let lastETag = localStorage.getItem('currentETag');
+        //   let isNew = !!lastETag && !!eTag && lastETag !== eTag;
 
-      //   //   if(isNew || !lastETag) {
-      //   //     localStorage.setItem('currentETag', eTag);
-      //   //     if(isNew) location.reload();
-      //   //   }
-      //   // };
-      // }
+        //   if(isNew || !lastETag) {
+        //     localStorage.setItem('currentETag', eTag);
+        //     if(isNew) location.reload();
+        //   }
+        // };
+      }
     </script>
     <noscript>Please enable JavaScript.</noscript>
   </body>
