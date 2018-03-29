@@ -1,7 +1,31 @@
 window.app = {
   routes: {
+    // List of assets
     '/': ['/components/index.js'],
-    '/about': ['/components/about.js']
+
+    // Object containing list of assets and other data
+    '/about': {
+      meta: [],
+      assets: ['/components/about.js']
+    },
+
+    // Function that, based on an experiment value, modifies its assets array
+    '/profile': function go(){
+      if(window.ex){
+        return ['/components/index.js'];
+      } else {
+        return ['/components/about.js'];
+      }
+    },
+
+    // Object containing a template key and a hideSpinner flag
+    '/gallery': {
+      hideSpinner: true,
+      template: {
+        markup: '<gallery-app>Gallery App</gallery-app>'
+      },
+      assets: ['/gallery-app.css']
+    }
   },
 
   matchRoute: function(path, routes){
@@ -24,8 +48,8 @@ window.app = {
       var ext = this.getExtension(url);
       switch(ext){
         case 'js':    return {tagName: 'script', src: url};                   break;
-        case 'css':   return {tagName: 'link', rel: 'stylesheet', src: url};  break;
-        case 'html':  return {tagName: 'link', rel: 'import', src: url};      break;
+        case 'css':   return {tagName: 'link', rel: 'stylesheet', href: url};  break;
+        case 'html':  return {tagName: 'link', rel: 'import', href: url};      break;
       }
     },
 
@@ -52,6 +76,23 @@ window.app = {
 
 var route = app.matchRoute(window.location.pathname, app.routes);
 if(route){
-  var assets = app.routes[route];
+  var assets;
+  var config = app.routes[route];
+  if(typeof config === 'function') assets = config();
+  else if(config.assets) assets = config.assets;
   app.loader.loadAssets(assets);
+
+  if(!Array.isArray(config) && typeof config === 'object'){
+    var wrapper = document.getElementById('wrapper');
+    if(config.template){
+      if(config.template.markup){
+        wrapper.innerHTML = config.template.markup;
+      } else {
+        // Fetch markup from CDN URL to dump into the DOM
+      }
+    }
+    if(config.hideSpinner){
+      wrapper.classList.remove('spinner');
+    }
+  }
 }

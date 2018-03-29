@@ -26,7 +26,7 @@ function sw() {
 }
 
 function styles() {
-  return gulp.src('./client/css/styles.css')
+  return gulp.src('./client/css/*.css')
     .pipe(gulp.dest('./dist'));
 }
 

@@ -2,20 +2,21 @@ var CACHE = 'simple-stack';
  
 self.addEventListener('install', function(e) {
   e.waitUntil(caches.open(CACHE).then(function (cache) {
-    cache.addAll(['/']);
+    cache.addAll(['/', '/components/index.js', '/components/about.js']);
   }));
 });
  
 self.addEventListener('fetch', function(e) {
-  if(e.request.method !== 'GET') return
-  // let url = e.request.url
-  // if(~e.request.url.indexOf('/api')) return
+  if(e.request.method !== 'GET') return;
 
-  e.respondWith(fromCache(e.request));
+  let reqUrl;
+  let url = e.request.url
+  if(url.lastIndexOf('/') === 0) reqUrl = '/';
 
-  // if(~url.indexOf('manifest')) return;
+  e.respondWith(fromCache(reqUrl || e.request));
+
   e.waitUntil(
-    update(e.request)
+    update(reqUrl || e.request)
     // .then(refresh)
   );
 });
