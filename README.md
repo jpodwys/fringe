@@ -23,10 +23,10 @@ With that in mind, new routes should be defined in a `routesConfig` object that 
   // Match a path to an array of assets
   '/': [ '/index.js' ],
   
-  // Match a path to an array of meta tags and an array of assets
+  // Match a path to an array of meta tags and an array of asset objects
   '/about': {
     meta: [ { 'description': 'The coolest page ever!' } ],
-    assets: [ '/about.js' ]
+    assets: [ { src: '/about.js', async: true } ]
   },
   
   // Match a path to a template (as markup) and an array of assets
