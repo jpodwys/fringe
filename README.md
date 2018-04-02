@@ -19,7 +19,7 @@ Routes are not defined in node. Instead, in order to ensure the app shell remain
 With that in mind, new routes should be defined in a `routes` object that will get baked into the app shell in the `dist` build step. Here's an example `routes` object:
 
 ```js
-let routes = {
+{
   // Match a path to an array of assets
   '/': [ '/index.js' ],
   
