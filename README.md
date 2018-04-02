@@ -1,6 +1,6 @@
 # simple-stack
 
-Extremely simple stack POC for a single node app that serves several PWAs with a common app shell. Focuses on serving logged-in experiences.
+Extremely simple stack POC for a single node app that serves several PWAs with a common app shell.
 
 ## Primary Goal
 
