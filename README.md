@@ -6,8 +6,6 @@ Extremely simple stack POC for a single node app that serves several PWAs with a
 
 All requests to node serve the same, static app shell so that the landing page for the entire site is ServiceWorker cacheable. The app shell contains a tiny amount of config and logic detailing all routes and assets needed to render those routes. This means that, no matter which page the browser loads first, it doesn't have to make another round trip to the node app in order to know how to load the other pages within the site.
 
-Server-side rendering is not supported.
-
 ## Where simple-stack Fits In
 
 `simple-stack` is built around ServiceWorker (don't worry, it serves browsers without ServiceWorker just fine too). It provides a ServiceWorker that automatically caches the app shell (and potentially other common assets), then caches all others assets as the user navigates around the site.
