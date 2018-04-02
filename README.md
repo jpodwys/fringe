@@ -1,10 +1,12 @@
 # simple-stack
 
-Extremely simple stack POC for a single node app that serves several PWAs with a common app shell.
+Extremely simple stack POC for a single node app that serves several PWAs with a common app shell. Focuses on serving logged-in experiences.
 
 ## Primary Goal
 
 All requests to node serve the same, static app shell so that the landing page for the entire site is ServiceWorker cacheable. The app shell contains a tiny amount of config and logic detailing all routes and assets needed to render those routes. This means that, no matter which page the browser loads first, it doesn't have to make another round trip to the node app in order to know how to load the other pages within the site.
+
+Server-side rendering is not supported.
 
 ## Where simple-stack Fits In
 
