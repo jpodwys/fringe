@@ -49,7 +49,7 @@ With that in mind, new routes should be defined in a `routes` object that will g
         assets: [ '/profile-new.js' ]
       };
     } else {
-      return ['/profile.js'];
+      return [ '/profile.js' ];
     }
 }
 ```
