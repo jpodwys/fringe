@@ -51,5 +51,14 @@ With that in mind, new routes should be defined in a `routes` object that will g
     } else {
       return [ '/profile.js' ];
     }
+  },
+  
+  // Consume a route wildcard and pass it to your string template
+  '/profile/:id': function profile({ id }){
+    return {
+      template: '<Profile id={' + id + '} />',
+      assets: [ '/profile.js' ]
+    };
+  }
 }
 ```
