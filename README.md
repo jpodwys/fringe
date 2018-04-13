@@ -10,7 +10,7 @@ All requests to node serve the same, static app shell so that the landing page f
 
 `simple-stack` is built around ServiceWorker (don't worry, it serves browsers without ServiceWorker just fine too). It provides a ServiceWorker that automatically caches the app shell (and potentially other common assets), then caches all others assets as the user navigates around the site.
 
-Beyond achieving `simple-stack`'s [Primary Goal](#primary-goal), `simple-stack` serves as an asset loading mechanism. By that, I mean that `simple-stack` matches user-defined routes to user-defined asset lists then loads those assets. That's it. Once that assets start loading, `simple-stack` is done and really just tries to get out of your way. As you can see in the [Route Handling](#route-handling) section below, `simple-stack` provides many conveniences associated with loading your assets.
+Beyond achieving `simple-stack`'s [Primary Goal](#primary-goal), `simple-stack` serves as an asset loading mechanism. By that, I mean that `simple-stack` matches user-defined routes to user-defined asset lists then loads those assets. That's it. Once those assets start loading, `simple-stack` is done and really just tries to get out of your way. As you can see in the [Route Handling](#route-handling) section below, `simple-stack` provides many conveniences associated with loading your assets.
 
 ## Route Handling
 
