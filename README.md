@@ -14,7 +14,7 @@ Beyond achieving `simple-stack`'s [Primary Goal](#primary-goal), `simple-stack` 
 
 ## Route Handling
 
-Routes are not defined in node. Instead, in order to ensure the app shell remains static and is therefore ServiceWorker cacheable, there is a single catch-all route in node that always returns the same static app shell.
+View routes are not defined in node (although REST endpoints still can be). Instead, in order to ensure the app shell remains static and is therefore ServiceWorker cacheable, there is a single catch-all route in node that always returns the same static app shell.
 
 With that in mind, new routes should be defined in a `routes` object that will get baked into the app shell in the `dist` build step. Here's an example `routes` object:
 
